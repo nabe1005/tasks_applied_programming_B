@@ -1,0 +1,11 @@
+// 2020.04.16 課題1-A
+// task_1a.c
+// Made by Taiki Watanabe(5SE-26)
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main(void)
+{
+    return 0;
+}
