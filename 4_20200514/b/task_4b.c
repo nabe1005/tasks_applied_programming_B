@@ -1,5 +1,5 @@
-// 2020.05.14 課題4-A
-// task_4a.c
+// 2020.05.14 課題4-B
+// task_4b.c
 // Made by Taiki Watanabe(5SE-26)
 #include <stdio.h>
 #include <math.h>
@@ -13,7 +13,7 @@ int main(void)
     double const error_threshold = 0.01;
     int count = 0;
     double x_new, x, error = 1;
-    x = 0.5;
+    x = -1.5;
 
     while (error > error_threshold)
     {
@@ -28,6 +28,12 @@ int main(void)
         printf("error=%15.15lf\n\n", error);
 
         x = x_new;
+
+        if (count == 5)
+        {
+            printf("打ち切り\nerror=%15.15lf\n", error);
+            exit(EXIT_SUCCESS);
+        }
     }
 
     printf("終了:%d回\n", count);
