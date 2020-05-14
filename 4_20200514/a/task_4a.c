@@ -31,4 +31,7 @@ int main(void)
     }
 
     printf("終了:%d回\n", count);
+    printf("x=%15.15lf\n", x);
+
+    return 0;
 }
