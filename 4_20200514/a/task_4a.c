@@ -5,8 +5,8 @@
 #include <math.h>
 #include <stdlib.h>
 
-#define f(x) atan(x - 1)
-#define df(x) 1 / (1 + ((x - 1) * (x - 1)))
+#define f(x) (atan(x - 1))
+#define df(x) (1 / (1 + ((x - 1) * (x - 1))))
 
 int main(void)
 {
