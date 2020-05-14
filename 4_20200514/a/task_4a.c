@@ -2,32 +2,30 @@
 #include <math.h>
 #include <stdlib.h>
 
-#define f(x) (x * x - 2)
-#define df(x) (2 * x)
+#define f(x) atan(x - 1)
+#define df(x) 1 / (1 + ((x - 1) * (x - 1)))
 
 int main(void)
 {
-    double const error0 = 0.0001;
+    double const error_threshold = 0.01;
     int count = 0;
-    double xnew, x, error = 1;
-    x = 2.0;
+    double x_new, x, error = 1;
+    x = 0.5;
 
-    while (error > error0)
+    while (error > error_threshold)
     {
         count++;
-        xnew = x - f(x) / df(x);
+        x_new = x - f(x) / df(x);
+        error = fabs(x_new - x);
 
-        printf("計算回数 %d\n", count);
+        printf("【計算回数】%d回\n", count);
         printf("f(x)=%15.15lf\n", f(x));
         printf("df(x)=%15.15lf\n", df(x));
-        printf("新しいx= %15.15lf\n", xnew);
-        error = fabs(xnew - x);
+        printf("x_new=%15.15lf\n", x_new);
+        printf("error=%15.15lf\n\n", error);
 
-        //if(error<0.001) break;
-
-        x = xnew;
+        x = x_new;
     }
 
-    printf("計算回数 %d\n", count);
-    printf("新しいx= %15.15lf\n", xnew);
+    printf("終了:%d回\n", count);
 }
