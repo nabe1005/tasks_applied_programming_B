@@ -22,16 +22,16 @@ int main(void)
         error = fabs(x_new - x);
 
         printf("【計算回数】%d回\n", count);
-        printf("f(x)=%15.15lf\n", f(x));
-        printf("df(x)=%15.15lf\n", df(x));
-        printf("x_new=%15.15lf\n", x_new);
-        printf("error=%15.15lf\n\n", error);
+        printf("f(x)=%.15lf\n", f(x));
+        printf("df(x)=%.15lf\n", df(x));
+        printf("x_new=%.15lf\n", x_new);
+        printf("error=%.15lf\n\n", error);
 
         x = x_new;
     }
 
     printf("終了:%d回\n", count);
-    printf("x=%15.15lf\n", x);
+    printf("x=%.15lf\n", x);
 
     return 0;
 }
